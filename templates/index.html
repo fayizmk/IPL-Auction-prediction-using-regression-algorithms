@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Player Price Prediction</title>
+  </head>
+  <style>
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      width: 20%;
+      background-color: #4caf50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    h2 {
+      width: 100%;
+      text-align: center;
+      font: Helvetica;
+    }
+
+    div {
+      border-radius: 5px;
+      background-color: rgb(255, 255, 255);
+      padding: 20px;
+      position: relative;
+      left: 580px;
+      text-align: left;
+      font-size: 150%;
+    }
+  </style>
+  <body bgcolor="white">
+    <h2>Predict the End Price of Players</h2>
+    <div>
+      <form action="/sub" method="POST">
+        <input type="radio" name="type" value="Bat" />
+        <label for="bat">Batsmen</label><br />
+        <input type="radio" name="type" value="Bowl" />
+        <label for="bowl">Bowler</label><br />
+        <input type="radio" name="type" value="wk" />
+        <label for="wk">Wicket Keeper</label><br />
+        <input type="radio" name="type" value="ar" />
+        <label for="ar">All Rounder</label><br /><br />
+        <input type="submit" value="Select" />
+      </form>
+    </div>
+  </body>
+</html>

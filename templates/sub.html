@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    input[type=number], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    p{
+      width: 100%;
+      text-align: center;
+    }
+    
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    </style>
+  <body>
+    <p>Type selected is {{t}}</p><br/>
+
+    {% if t == "Bat" %}
+    <form action="bat_p" method="POST">
+      <input type="number" name="baseprice"  min="0"  max="2" step="any" placeholder="Baseprice" /><br/>
+      <input type="number" name="age" placeholder="age"/><br/>
+      <input type="number" name="inn" placeholder="innings"/><br/>
+      <input type="number" name="runs" placeholder="runs"/><br/>
+      <input type="number" name="hs" placeholder="high score"/><br/>
+      <input type="number" name="avg" step="any" placeholder="average"/><br/>
+      <input type="number" name="sr" placeholder="strike rate"/><br/>
+      <input type="number" name="Hundred" placeholder="hundreds"/><br/>
+      <input type="number" name="fifty" placeholder="fifties"/><br/>
+      <input type="number" name="four" placeholder="four"/><br/>
+      <input type="number" name="six" placeholder="sixes"/><br/>
+      <input type="number" name="ravg" step="any" placeholder="recent average"/><br/>
+      <input type="number" name="rsr" placeholder="recent strikerate"/><br/>
+      <input type="number" name="rruns" placeholder="recent runs"/><br/>
+      <input type="number" name="mat" placeholder="recent matches"/><br/>
+      <input type="submit" value="Predict">
+    </form>
+    {% endif %} 
+    {% if t == "Bowl" %}
+    <form action="bowl_p" method="POST">
+      <form action="ar_p" method="POST">
+        <input type="number" name="baseprice"  min="0"  max="2" step="any"  placeholder="Baseprice" /><br/>      
+        <input type="number" name="age" placeholder="age" /><br/>      
+        <input type="number" name="innbo" placeholder="innings" /><br/>
+        <input type="number" name="ball" placeholder="balls" /><br/>      
+        <input type="number" name="runs" placeholder="runs" /><br/>      
+        <input type="number" name="wkt" placeholder="wickets" /><br/>      
+        <input type="number" name="avg" step="any" placeholder="average" /><br/>
+        <input type="number" name="rwkt" placeholder="recent wickets" /><br/>
+        <input type="number" name="ravg" step="any" placeholder="recent average"/><br/>
+        <input type="number" name="eco" placeholder="economy" step="any" /><br/>
+        <input type="submit" value="Predict">
+        </form>
+    {% endif %} 
+    {% if t == "wk" %}
+     <form action="wk_p" method="POST">
+      <input type="number" name="baseprice"  min="0"  max="2" step="any" placeholder="baseprice" /><br/>
+      <input type="number" name="age" placeholder="age" /><br/>
+      <input type="number" name="inn" placeholder="innings" /><br/>
+      <input type="number" name="runs" placeholder="runs" /><br/>
+      <input type="number" name="hs" placeholder="high score" /><br/>
+      <input type="number" name="avg" step="any" placeholder="average" /><br/>
+      <input type="number" name="sr" placeholder="strike rate" /><br/>
+      <input type="number" name="Hundred" placeholder="hundreds" /><br/>
+      <input type="number" name="fifty" placeholder="fifties" /><br/>
+      <input type="number" name="four" placeholder="fours" /><br/>
+      <input type="number" name="six" placeholder="sixes" /><br/> 
+      <input type="number" name="st" placeholder="stump" /><br/>
+      <input type="number" name="ravg" step="any" placeholder="recent average" /><br/>
+      <input type="number" name="rsr" placeholder="recent strike rate" /><br/>
+      <input type="number" name="rruns" placeholder="recent runs" /><br/>
+      <input type="number" name="mat" placeholder="recent matches" /><br/>
+      <input type="submit" value="Predict">
+     </form>
+    {% endif %}
+    {% if t == "ar" %}
+    <form action="ar_p" method="POST">     
+      <input type="number" name="baseprice" min="0"  max="2" step="any" placeholder="baseprice" /><br/>
+      <input type="number" name="age"  placeholder="age" /><br/>   
+      <input type="number" name="innbo"  placeholder="bosling innings"/><br/>
+      <input type="number" name="ball"  placeholder="balls" /><br/>
+      <input type="number" name="rc"  placeholder="runs conceeded" /><br/>
+      <input type="number" name="wkt"  placeholder="wickets" /><br/>
+      <input type="number" name="avgb" step="any"  placeholder="bowling average" /><br/>
+      <input type="number" name="innba"  placeholder="batting innings" /><br/>
+      <input type="number" name="rs"  placeholder="runs scored"/><br/>
+      <input type="number" name="hs"  placeholder="high score"/><br/>
+      <input type="number" name="avg" step="any"  placeholder="average"/><br/>
+      <input type="number" name="sr"   placeholder="strike rate"/><br/>
+      <input type="number" name="Hundred"  placeholder="Hundreds" /><br/>
+      <input type="number" name="fifty"   placeholder="fifties" /><br/>
+      <input type="number" name="four"   placeholder="fours" /><br/>
+      <input type="number" name="six"   placeholder="sixes"/><br/>
+      <input type="number" name="ravg" step="any"  placeholder="recent average" /><br/>
+      <input type="number" name="rsr"   placeholder="recent strikerate"/><br/>  
+      <input type="number" name="rwkt"   placeholder="rwkt"/><br/>
+      <input type="number" name="ravgb" step="any"  placeholder="recent bowling average" /><br/>
+      <input type ="submit" value="Predict">
+    </form>
+    {% endif %}
+  </body>
+</html>
